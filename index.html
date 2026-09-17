@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="웹 디자이너 정혜인 포트폴리오 — 19개의 코스메틱·쇼핑몰·의류·규정서 프로젝트, 7년의 웹 디자인 경력">
+<title>JUNG HYEIN · Web Designer Portfolio 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0B0F;
+  --bg2:#111118;
+  --ink:#F5F5F7;
+  --muted:#9A9AA8;
+  --line:rgba(255,255,255,.08);
+  --accent:#FF2D7B;
+  --accent2:#FF6FA8;
+  --accent-soft:rgba(255,45,123,.12);
+  --max:1280px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Inter','Noto Sans KR',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-weight:400;
+  line-height:1.6;
+  letter-spacing:-.01em;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+body::before{
+  content:'';position:fixed;inset:0;
+  background:
+    radial-gradient(ellipse 80% 50% at 15% 0%,rgba(255,45,123,.18),transparent 60%),
+    radial-gradient(ellipse 60% 40% at 90% 80%,rgba(255,45,123,.08),transparent 60%);
+  pointer-events:none;z-index:-1;
+}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+@media(max-width:720px){.wrap{padding:0 20px}}
+
+/* NAV */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:20px 32px;
+  display:flex;justify-content:space-between;align-items:center;
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  background:rgba(11,11,15,.65);
+  border-bottom:1px solid transparent;
+  transition:.4s;
+}
+.nav.scrolled{border-bottom-color:var(--line);padding:14px 32px;background:rgba(11,11,15,.85)}
+.brand{
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:700;letter-spacing:.05em;font-size:15px;
+  display:flex;align-items:center;gap:10px;
+}
+.brand .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}
+.menu{display:flex;gap:28px;list-style:none}
+.menu a{
+  color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;
+  letter-spacing:.02em;transition:.25s;position:relative;
+}
+.menu a::after{
+  content:'';position:absolute;left:0;bottom:-6px;width:0;height:1px;
+  background:var(--accent);transition:.3s;
+}
+.menu a:hover{color:var(--ink)}
+.menu a:hover::after{width:100%}
+@media(max-width:780px){.menu{display:none}}
+
+/* HERO */
+.hero{
+  min-height:100vh;display:flex;align-items:center;position:relative;
+  padding:140px 0 80px;
+}
+.hero-inner{position:relative;width:100%}
+.tag{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 16px;border:1px solid var(--line);border-radius:100px;
+  font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:32px;
+}
+.tag .pulse{
+  width:6px;height:6px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 0 0 var(--accent);animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(255,45,123,.6)}
+  70%{box-shadow:0 0 0 10px rgba(255,45,123,0)}
+  100%{box-shadow:0 0 0 0 rgba(255,45,123,0)}
+}
+.hero h1{
+  font-family:'Space Grotesk','Noto Sans KR',sans-serif;
+  font-weight:900;font-size:clamp(60px,12vw,180px);
+  line-height:.92;letter-spacing:-.04em;
+  margin-bottom:24px;
+}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .line span{display:inline-block;transform:translateY(110%);animation:up .9s cubic-bezier(.16,1,.3,1) forwards}
+.hero h1 .line:nth-child(1) span{animation-delay:.1s}
+.hero h1 .line:nth-child(2) span{animation-delay:.25s;color:var(--ink)}
+.hero h1 .line:nth-child(3) span{animation-delay:.4s;color:var(--accent)}
+@keyframes up{to{transform:translateY(0)}}
+.hero p.lead{
+  max-width:540px;font-size:18px;color:var(--muted);margin:32px 0 40px;
+  opacity:0;animation:fade .8s .9s forwards;
+}
+.hero .cta-row{
+  display:flex;gap:16px;flex-wrap:wrap;
+  opacity:0;animation:fade .8s 1.1s forwards;
+}
+@keyframes fade{to{opacity:1}}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:16px 28px;border-radius:100px;font-size:14px;font-weight:600;
+  text-decoration:none;letter-spacing:.02em;transition:.3s;cursor:pointer;
+  border:none;font-family:inherit;
+}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,45,123,.35)}
+.btn-ghost{border:1px solid var(--line);color:var(--ink);background:transparent}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+.hero-stats{
+  position:absolute;right:0;top:50%;transform:translateY(-50%);
+  display:flex;flex-direction:column;gap:36px;
+  padding-right:8px;
+  opacity:0;animation:fade 1s 1.3s forwards;
+}
+.hero-stats .num{
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:42px;
+  letter-spacing:-.04em;line-height:1;
+}
+.hero-stats .num em{font-style:normal;color:var(--accent)}
+.hero-stats .lbl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+@media(max-width:980px){.hero-stats{display:none}}
+
+.scroll-hint{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  opacity:0;animation:fade 1s 1.6s forwards;
+}
+.scroll-hint .line{width:1px;height:30px;background:linear-gradient(to bottom,var(--accent),transparent);animation:linegrow 2s infinite}
+@keyframes linegrow{0%,100%{transform:scaleY(.4);transform-origin:top}50%{transform:scaleY(1);transform-origin:bottom}}
+
+/* SECTION */
+section{padding:120px 0;position:relative}
+.sec-head{margin-bottom:64px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.sec-head h2{
+  font-family:'Space Grotesk','Noto Sans KR',sans-serif;
+  font-weight:700;font-size:clamp(36px,6vw,64px);letter-spacing:-.03em;line-height:1.05;
+}
+.sec-head h2 em{font-style:normal;color:var(--accent)}
+.sec-head .kicker{
+  font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;margin-bottom:12px;
+}
+.sec-head .meta{color:var(--muted);max-width:380px;font-size:14px;text-align:right}
+
+/* ABOUT */
+.about{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:start}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:48px}}
+.about-text p{font-size:17px;line-height:1.75;color:rgba(245,245,247,.85);margin-bottom:20px}
+.about-text p strong{color:var(--ink);font-weight:600}
+.about-photo{
+  position:relative;aspect-ratio:3/4;border-radius:24px;overflow:hidden;
+  border:1px solid var(--line);
+  background:linear-gradient(135deg,rgba(255,45,123,.1),transparent 60%);
+}
+.about-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.about-photo::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(11,11,15,.4),transparent 50%);
+}
+.about-photo .tag-name{
+  position:absolute;bottom:24px;left:24px;right:24px;
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;
+  letter-spacing:-.02em;z-index:2;
+}
+.about-photo .tag-name em{font-style:normal;color:var(--accent)}
+
+.fact-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:0;
+  margin-top:48px;border-top:1px solid var(--line);
+}
+.fact{
+  padding:24px 0;border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+}
+.fact:nth-child(odd){padding-right:24px;border-right:1px solid var(--line)}
+.fact:nth-child(even){padding-left:24px}
+.fact .k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.fact .v{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;text-align:right}
+
+/* JOURNEY (TIMELINE) */
+.journey{background:var(--bg2)}
+.timeline{position:relative;padding-left:24px;border-left:1px solid var(--line)}
+.tl-item{
+  position:relative;padding:0 0 48px 56px;
+  opacity:0;transform:translateY(20px);transition:.7s;
+}
+.tl-item.in{opacity:1;transform:none}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{
+  content:'';position:absolute;left:-6px;top:8px;width:11px;height:11px;
+  border-radius:50%;background:var(--bg2);border:2px solid var(--accent);
+  box-shadow:0 0 0 4px var(--bg2);
+}
+.tl-item .yr{
+  font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--accent);
+  font-size:13px;letter-spacing:.16em;margin-bottom:8px;
+}
+.tl-item .co{font-size:20px;font-weight:600;margin-bottom:6px;letter-spacing:-.01em}
+.tl-item .role{font-size:13px;color:var(--muted);margin-bottom:14px;font-weight:500}
+.tl-item .desc{font-size:14px;color:rgba(245,245,247,.7);line-height:1.7;max-width:680px}
+
+/* SKILLS */
+.skills{background:var(--bg)}
+.skill-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;
+}
+.skill-card{
+  position:relative;padding:28px;border:1px solid var(--line);border-radius:20px;
+  background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);
+  transition:.3s;overflow:hidden;
+}
+.skill-card:hover{
+  border-color:var(--accent);transform:translateY(-4px);
+  box-shadow:0 20px 50px rgba(255,45,123,.15);
+}
+.skill-card::before{
+  content:'';position:absolute;top:-50%;right:-30%;width:200px;height:200px;
+  background:radial-gradient(circle,var(--accent-soft),transparent 70%);
+  opacity:0;transition:.4s;
+}
+.skill-card:hover::before{opacity:1}
+.skill-card .ic{
+  width:44px;height:44px;border-radius:12px;
+  background:var(--accent-soft);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;
+}
+.skill-card h3{font-size:18px;font-weight:600;margin-bottom:6px;letter-spacing:-.01em}
+.skill-card .lvl{font-size:12px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
+.bar{height:4px;border-radius:4px;background:rgba(255,255,255,.06);overflow:hidden;position:relative}
+.bar i{
+  display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));
+  border-radius:4px;width:0;transition:width 1.4s cubic-bezier(.16,1,.3,1);
+}
+.skill-card.in .bar i{width:var(--w)}
+.usage{margin-top:16px;font-size:13px;color:var(--muted);line-height:1.6}
+
+/* PROCESS */
+.process{background:var(--bg2)}
+.proc-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:0;
+  border:1px solid var(--line);border-radius:24px;overflow:hidden;
+}
+@media(max-width:900px){.proc-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.proc-grid{grid-template-columns:1fr}}
+.proc{
+  padding:32px 24px;border-right:1px solid var(--line);position:relative;
+  background:var(--bg2);transition:.3s;
+}
+.proc:last-child{border-right:none}
+.proc:hover{background:var(--bg)}
+@media(max-width:900px){
+  .proc:nth-child(2n){border-right:none}
+  .proc:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+@media(max-width:560px){.proc{border-right:none;border-bottom:1px solid var(--line)}}
+.proc .no{
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:42px;
+  color:var(--accent);letter-spacing:-.04em;line-height:1;margin-bottom:18px;
+  display:inline-block;
+}
+.proc h3{font-size:16px;font-weight:600;margin-bottom:10px;letter-spacing:-.01em}
+.proc p{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* WORK */
+.work{background:var(--bg)}
+.filter{
+  display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px;
+  padding-bottom:24px;border-bottom:1px solid var(--line);
+}
+.filter button{
+  padding:8px 18px;border-radius:100px;border:1px solid var(--line);
+  background:transparent;color:var(--muted);font-size:13px;font-weight:500;
+  cursor:pointer;transition:.25s;font-family:inherit;
+}
+.filter button:hover{border-color:var(--accent);color:var(--ink)}
+.filter button.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.work-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+@media(max-width:980px){.work-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.work-grid{grid-template-columns:1fr}}
+.card{
+  position:relative;border-radius:16px;overflow:hidden;cursor:pointer;
+  background:var(--bg2);border:1px solid var(--line);
+  transition:.35s cubic-bezier(.16,1,.3,1);
+  opacity:0;transform:translateY(20px);
+}
+.card.in{opacity:1;transform:none}
+.card.hidden{display:none}
+.card:hover{transform:translateY(-6px);border-color:var(--accent)}
+.thumb{
+  aspect-ratio:4/5;overflow:hidden;position:relative;
+  background:linear-gradient(135deg,#1a1a24,#0e0e16);
+}
+.thumb img{
+  width:100%;height:100%;object-fit:cover;object-position:top center;
+  transition:transform .8s cubic-bezier(.16,1,.3,1);
+}
+.card:hover .thumb img{transform:scale(1.06)}
+.meta{padding:18px 20px 20px;border-top:1px solid var(--line)}
+.meta .tag2{
+  display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;margin-bottom:8px;
+}
+.meta h4{font-size:16px;font-weight:600;letter-spacing:-.01em;margin-bottom:6px}
+.meta .tools{font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.meta .tools span{
+  padding:3px 8px;border-radius:6px;background:rgba(255,255,255,.04);
+  font-size:11px;
+}
+
+/* LIGHTBOX */
+.lb{
+  position:fixed;inset:0;z-index:200;
+  background:rgba(11,11,15,.95);
+  backdrop-filter:blur(8px);
+  display:none;align-items:center;justify-content:center;
+  padding:40px 20px;
+}
+.lb.open{display:flex;animation:fade .25s}
+.lb-img{
+  max-width:min(1200px,95vw);max-height:90vh;
+  border-radius:12px;object-fit:contain;
+  box-shadow:0 30px 80px rgba(0,0,0,.5);
+}
+.lb-info{
+  position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+  text-align:center;color:var(--muted);font-size:13px;letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.lb-close,.lb-prev,.lb-next{
+  position:absolute;background:rgba(255,255,255,.08);border:none;
+  width:48px;height:48px;border-radius:50%;color:#fff;
+  font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:.25s;font-family:inherit;
+}
+.lb-close:hover,.lb-prev:hover,.lb-next:hover{background:var(--accent)}
+.lb-close{top:24px;right:24px}
+.lb-prev{left:24px;top:50%;transform:translateY(-50%)}
+.lb-next{right:24px;top:50%;transform:translateY(-50%)}
+@media(max-width:720px){.lb-prev{left:12px}.lb-next{right:12px}.lb-close{top:12px;right:12px}}
+
+/* PHILOSOPHY */
+.phil{background:var(--bg2)}
+.phil-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+@media(max-width:780px){.phil-grid{grid-template-columns:1fr}}
+.phil-card{
+  padding:36px;border:1px solid var(--line);border-radius:20px;
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,rgba(255,45,123,.04),transparent 50%);
+}
+.phil-card::after{
+  content:'';position:absolute;top:0;left:0;width:60%;height:2px;
+  background:linear-gradient(90deg,var(--accent),transparent);
+}
+.phil-card .num{
+  font-family:'Space Grotesk',sans-serif;font-size:60px;font-weight:700;
+  color:var(--accent);letter-spacing:-.04em;line-height:1;margin-bottom:20px;
+}
+.phil-card h3{font-size:20px;font-weight:600;margin-bottom:12px;letter-spacing:-.01em}
+.phil-card p{font-size:14px;color:var(--muted);line-height:1.8}
+
+/* CONTACT */
+.contact{background:var(--bg)}
+.contact-inner{
+  border:1px solid var(--line);border-radius:32px;padding:64px;
+  background:radial-gradient(ellipse 100% 100% at 100% 0%,rgba(255,45,123,.18),transparent 60%);
+  position:relative;overflow:hidden;
+}
+@media(max-width:720px){.contact-inner{padding:40px 24px;border-radius:24px}}
+.contact-inner::before{
+  content:'';position:absolute;top:0;right:0;width:300px;height:300px;
+  background:radial-gradient(circle,rgba(255,45,123,.25),transparent 60%);
+  pointer-events:none;
+}
+.cta-line{
+  font-family:'Space Grotesk','Noto Sans KR',sans-serif;
+  font-size:clamp(36px,6vw,72px);font-weight:700;letter-spacing:-.03em;line-height:1.05;
+  margin-bottom:32px;position:relative;
+}
+.cta-line em{font-style:normal;color:var(--accent)}
+.contact-info{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border-top:1px solid var(--line);margin-top:40px;
+}
+@media(max-width:720px){.contact-info{grid-template-columns:1fr}}
+.ci{padding:24px 0;border-bottom:1px solid var(--line)}
+.ci:nth-child(-n+3){border-bottom:1px solid var(--line)}
+.ci .k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.ci .v{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:500;letter-spacing:-.01em;word-break:keep-all}
+.ci .v a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:.25s}
+.ci .v a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+/* FOOTER */
+.foot{padding:48px 0;border-top:1px solid var(--line);font-size:12px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.foot .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.foot .row em{color:var(--accent);font-style:normal;font-weight:600}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:1s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.1s}
+.reveal[data-d="2"]{transition-delay:.2s}
+.reveal[data-d="3"]{transition-delay:.3s}
+.reveal[data-d="4"]{transition-delay:.4s}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="brand"><span class="dot"></span>JUNG HYEIN · 2026</div>
+  <ul class="menu">
+    <li><a href="#about">About</a></li>
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="tag"><span class="pulse"></span>Web Designer · Portfolio 2026</div>
+    <h1>
+      <span class="line"><span>사용자의 불편을</span></span>
+      <span class="line"><span>해결하고</span></span>
+      <span class="line"><span>브랜드를 키웁니다.</span></span>
+    </h1>
+    <p class="lead">안녕하세요. 7년 경력의 웹 디자이너 정혜인입니다. 코스메틱·의류·쇼핑몰 19개 프로젝트, 카페24·아임웹·큐텐JP 풀스택 경험. 기획부터 보정까지, 거래하고 싶은 완성도를 책임집니다.</p>
+    <div class="cta-row">
+      <a href="#work" class="btn btn-primary">프로젝트 보기 →</a>
+      <a href="#contact" class="btn btn-ghost">함께 일하기</a>
+    </div>
+
+    <div class="hero-stats">
+      <div>
+        <div class="num"><em>7</em>+</div>
+        <div class="lbl">Years</div>
+      </div>
+      <div>
+        <div class="num"><em>19</em></div>
+        <div class="lbl">Projects</div>
+      </div>
+      <div>
+        <div class="num"><em>JP</em>/KR</div>
+        <div class="lbl">Market</div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <span class="line"></span>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="kicker">01 · About</div>
+        <h2>디자인은 <em>사용자 경험</em>을<br>먼저 생각합니다.</h2>
+      </div>
+      <p class="meta">피부·네일 미용 실무, 쇼핑몰 창업, 그리고 9개 브랜드의 웹 디자이너. 다양한 직무를 경험한 디자이너라 제품 언어로 소통할 수 있습니다.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>사용자 경험을 최우선으로 생각하며, <strong>감각적인 디자인과 기능성</strong>을 조화롭게 구현하는 것을 목표로 합니다. 다양한 프로젝트를 통해 쌓아온 경험을 바탕으로, 제품을 빠르게 캐치하여 기획에 있어 효율적으로 작업하는 편입니다.</p>
+        <p>앞으로도 지속적인 학습과 업무 스킬을 늘려 전문성을 쌓아가며, 기업에 긍정적인 영향을 미칠 수 있는 <strong>웹디자이너로 성장</strong>하겠습니다.</p>
+
+        <div class="fact-grid">
+          <div class="fact"><span class="k">이름</span><span class="v">정혜인 / Jung HyeIn</span></div>
+          <div class="fact"><span class="k">포지션</span><span class="v">웹 디자이너</span></div>
+          <div class="fact"><span class="k">경력</span><span class="v">2016 — 2025 (9개사)</span></div>
+          <div class="fact"><span class="k">학력</span><span class="v">통진고 / 김포대 시각디자인과(중퇴)/span></div>
+          <div class="fact"><span class="k">연락처</span><span class="v">+82 10-2340-1621</span></div>
+          <div class="fact"><span class="k">이메일</span><span class="v">uniqueholic_@naver.com</span></div>
+          <div class="fact"><span class="k">블로그</span><span class="v">blog.naver.com/uniqueholic_</span></div>
+          <div class="fact"><span class="k">자격증</span><span class="v">워드2급 · 미용사(피부/네일)</span></div>
+        </div>
+      </div>
+
+      <div class="about-photo reveal" data-d="2">
+        <img src="https://www.genspark.ai/api/files/s/C5VcCO1W" alt="정혜인 디자이너">
+        <div class="tag-name">Jung HyeIn <em>·</em> Web Designer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="journey" id="journey">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="kicker">02 · My Journey</div>
+        <h2>9개 브랜드,<br><em>9가지 성장</em></h2>
+      </div>
+      <p class="meta">2016년 쇼핑몰 대표로 창업해 웹 디자인의 기초를 다졌고, 이후 에이전시·자사몰·수출 프로젝트까지 폭넓게 일했습니다.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="yr">2016.03 — 2018.12</div>
+        <div class="co">유니크파인 쇼핑몰</div>
+        <div class="role">대표 (창업 · 1인 디자인)</div>
+        <div class="desc">핸드메이드 액세서리 제작, 카페24 사이트 개설 및 디자인, 콘텐츠·상세페이지 디자인, 스마트스토어·SNS 운영. 디자인·운영·마케팅 전 과정을 1인으로 경험.</div>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2019.07 — 2019.10</div>
+        <div class="co">마인 마케팅</div>
+        <div class="role">대리 · 웹 디자이너</div>
+        <div class="desc">카페24 개설 및 디자인 작업, 인쇄물 디자인, 사무 보조 업무. 에이전시형 다중 프로젝트 운영을 학습.</div>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2021.05 — 2021.10</div>
+        <div class="co">메트로 공인중개사</div>
+        <div class="role">실장 · 웹 디자이너</div>
+        <div class="desc">블로그 썸네일 디자인·사진 편집·포스팅 업로드, 부동산 사무 보조. 콘텐츠 마케팅 실무 경험.</div>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2022.02 — 2022.07</div>
+        <div class="co">씨클레어</div>
+        <div class="role">과장 · 웹 디자이너</div>
+        <div class="desc">제품 촬영·보정, 상세페이지 기획 및 디자인, 패키지 디자인. 촬영부터 디자인까지 풀 워크플로우 구축.</div>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2023.01 — 2024.10</div>
+        <div class="co">비브로</div>
+        <div class="role">대리 · 웹 디자이너 (메인)</div>
+        <div class="desc">카페24 코스메틱 자사몰 + 프랑스 'Laction' 쇼핑몰 개설, 아임웹 일본 JP 쇼핑몰 2건(테라로직·글로웍스), Wix 일본 기업 홈페이지(baruda), Qoo10 다수 브랜드 콘텐츠/썸네일/배너/랜딩페이지, 일본어 번역, 브랜드·회사 소개서·제안서·보고서 PPT, 인쇄물·패키지.</div>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2024.12 — 2025.09</div>
+        <div class="co">에이비프</div>
+        <div class="role">웹 디자이너</div>
+        <div class="desc">의류 쇼핑몰 웹 디자이너, 제품 디테일 촬영·인물 보정, 썸네일·상세페이지 기획 및 디자인.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="kicker">03 · Expertise</div>
+        <h2>도구보다 <em>사고력</em>,<br>그리고 9개 도구.</h2>
+      </div>
+      <p class="meta">디자인 툴은 빠르게 캐치하는 편. 최근엔 AI 이미지 생성으로 소구 포인트를 시각화하는 실험도 즐깁니다.</p>
+    </div>
+
+    <div class="skill-grid">
+      <div class="skill-card">
+        <div class="ic">F</div>
+        <h3>Figma</h3>
+        <div class="lvl">Level 95% · Daily</div>
+        <div class="bar"><i style="--w:95%"></i></div>
+        <p class="usage">상세페이지, 기획, 배너, 브랜드 콘텐츠 디자인, 썸네일</p>
+      </div>
+      <div class="skill-card">
+        <div class="ic">C</div>
+        <h3>Canva + PPT</h3>
+        <div class="lvl">Level 95% · Daily</div>
+        <div class="bar"><i style="--w:95%"></i></div>
+        <p class="usage">브랜드 소개서, 회사 소개서, 제안서, 보고서, 마케팅 기획서</p>
+      </div>
+      <div class="skill-card">
+        <div class="ic">P</div>
+        <h3>Photoshop</h3>
+        <div class="lvl">Level 80% · Daily</div>
+        <div class="bar"><i style="--w:80%"></i></div>
+        <p class="usage">이미지 보정, 배너, 상세페이지 수정, 썸네일</p>
+      </div>
+      <div class="skill-card">
+        <div class="ic">Ai</div>
+        <h3>Illustrator</h3>
+        <div class="lbl">Level 70%</div>
+        <div class="bar"><i style="--w:70%"></i></div>
+        <p class="usage">로고 디자인, 인쇄물, 벡터 일러스트</p>
+      </div>
+      <div class="skill-card">
+        <div class="ic">Cp</div>
+        <h3>CapCut</h3>
+        <div class="lbl">간단 영상 편집</div>
+        <div class="bar"><i style="--w:70%"></i></div>
+        <p class="usage">쇼츠·프로모 영상 자막/컷 편집</p>
+      </div>
+      <div class="skill-card">
+        <div class="ic">AI</div>
+        <h3>ChatGPT · Gemini</h3>
+        <div class="lbl">제품 기획 · 이미지 생성</div>
+        <div class="bar"><i style="--w:80%"></i></div>
+        <p class="usage">제품 기획 카피라이팅, Gemini 나노바나나 이미지 생성</p>
+      </div>
+      <div class="skill-card">
+        <div class="ic">P</div>
+        <h3>PPT</h3>
+        <div class="lbl">문서 작업</div>
+        <div class="bar"><i style="--w:85%"></i></div>
+        <p class="usage">규정서·제안서·보고서 한글 문서</p>
+      </div>
+      <div class="skill-card">
+        <div class="ic">N</div>
+        <h3>Notion</h3>
+        <div class="lbl">캘린더 · 공동작업</div>
+        <div class="bar"><i style="--w:70%"></i></div>
+        <p class="usage">일정 관리, 팀 위키, 협업 문서</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="kicker">04 · Process</div>
+        <h2>논리 × 창의,<br><em>5단계 솔루션</em></h2>
+      </div>
+      <p class="meta">리서치부터 런칭 후 운영까지, 모든 단계에서 클라이언트의 비즈니스 KPI를 함께 봅니다.</p>
+    </div>
+
+    <div class="proc-grid reveal">
+      <div class="proc">
+        <span class="no">01</span>
+        <h3>리서치 & 전략</h3>
+        <p>클라이언트 니즈 분석, 시장·경쟁사 트렌드 조사로 브랜드 방향성 설정</p>
+      </div>
+      <div class="proc">
+        <span class="no">02</span>
+        <h3>컨셉 & 기획</h3>
+        <p>타겟·소구 포인트 도출, 무드보드·IA 구성으로 기획안 시각화</p>
+      </div>
+      <div class="proc">
+        <span class="no">03</span>
+        <h3>촬영 & 보정</h3>
+        <p>제품 디테일·인물 촬영, 색감·톤 보정으로 비주얼 퀄리티 업</p>
+      </div>
+      <div class="proc">
+        <span class="no">04</span>
+        <h3>디자인 & 검수</h3>
+        <p>상세페이지·배너·썸네일 디자인, 1px 단위 검수 후 납품</p>
+      </div>
+      <div class="proc">
+        <span class="no">05</span>
+        <h3>런칭 & 운영</h3>
+        <p>쇼핑몰 개설·이벤트 페이지·번역·SNS 운영까지 A to Z</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="kicker">05 · Works</div>
+        <h2><em>19</em>개의 프로젝트,<br>한 번 더 클릭해 크게 보기.</h2>
+      </div>
+      <p class="meta">썸네일을 클릭하면 원본이 크게 보입니다. 카테고리별로 필터링도 가능합니다.</p>
+    </div>
+
+    <div class="filter reveal" id="filter">
+      <button class="active" data-cat="all">전체 · 19</button>
+      <button data-cat="cos">코스메틱</button>
+      <button data-cat="qoo10">Qoo10 JP</button>
+      <button data-cat="shop">쇼핑몰 구축</button>
+      <button data-cat="clothes">의류</button>
+      <button data-cat="pkg">패키지</button>
+      <button data-cat="reg">규정서</button>
+      <button data-cat="logo">로고</button>
+      <button data-cat="site">홈페이지</button>
+    </div>
+
+    <div class="work-grid" id="grid">
+      <!-- 01 -->
+      <article class="card" data-cat="cos" data-title="소이프 — 로고·패키지·상세페이지" data-img="https://www.genspark.ai/api/files/s/AvrjRcU3">
+        <div class="thumb"><img src="https://www.genspark.ai/api/files/s/m3KkGFn3" alt="소이프" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Cosmetic</span>
+          <h4>01 · 소이프</h4>
+          <div class="tools"><span>로고</span><span>패키지</span><span>상세페이지</span><span>브랜딩</span></div>
+        </div>
+      </article>
+      <!-- 02 -->
+      <article class="card" data-cat="pkg" data-title="오버샤인 — 차량용 세정제 패키지·상세페이지" data-img="https://www.genspark.ai/api/files/s/ZIvUvqG8">
+        <div class="thumb"><img src="https://www.genspark.ai/api/files/s/8Mn25I5W" alt="오버샤인" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Package</span>
+          <h4>02 · 오버샤인</h4>
+          <div class="tools"><span>제품 촬영</span><span>패키지</span><span>상세페이지</span></div>
+        </div>
+      </article>
+      <!-- 03 -->
+      <article class="card" data-cat="cos" data-title="소녀콜라겐 — 규정서·집기 디자인" data-img="https://www.genspark.ai/api/files/s/1TJ34ymw">
+        <div class="thumb"><img src="https://www.genspark.ai/api/files/s/0FNJkTVX" alt="소녀콜라겐" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Cosmetic</span>
+          <h4>03 · 소녀콜라겐</h4>
+          <div class="tools"><span>규정서</span><span>집기</span><span>기획</span></div>
+        </div>
+      </article>
+      <!-- 04 -->
+      <article class="card" data-cat="qoo10" data-title="Qoo10 JP 듀이트리 — 썸네일" data-img="https://www.genspark.ai/api/files/s/7YrocSMx">
+        <div class="thumb"><img src="https://www.genspark.ai/api/files/s/eByiCM8m" alt="듀이트리" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Qoo10 JP</span>
+          <h4>04 · 듀이트리</h4>
+          <div class="tools"><span>썸네일</span><span>톤앤매너</span></div>
+        </div>
+      </article>
+      <!-- 05 -->
+      <article class="card" data-cat="qoo10" data-title="Qoo10 JP 모필·헬로샤인·두눈 — 렌즈 썸네일" data-img="https://www.genspark.ai/api/files/s/9GLbPhjh">
+        <div class="thumb"><img src="https://www.genspark.ai/api/files/s/C0rhw5XY" alt="렌즈 썸네일" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Qoo10 JP</span>
+          <h4>05 · 렌즈 브랜드 3사</h4>
+          <div class="tools"><span>썸네일</span><span>콘택트렌즈</span></div>
+        </div>
+      </article>
+      <!-- 06 -->
+      <article class="card" data-cat="qoo10" data-title="Qoo10 JP 모필 — 상세페이지" data-img="https://www.genspark.ai/api/files/s/m2tLYFc4">
+        <div class="thumb"><img src="https://www.genspark.ai/api/files/s/eeoBKtuY" alt="모필 상세페이지" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Qoo10 JP</span>
+          <h4>06 · 모필 상세페이지</h4>
+          <div class="tools"><span>상세페이지</span><span>재편집</span></div>
+        </div>
+      </article>
+      <!-- 07 -->
+      <article class="card" data-cat="qoo10" data-title="Qoo10 JP 바르다샵 — 콘텐츠·배너·썸네일" data-img="https://www.genspark.ai/api/files/s/KPZcJlFb">
+        <div class="thumb"><img src="https://www.genspark.ai/api/files/s/DOmJRfXl" alt="바르다샵" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Qoo10 JP</span>
+          <h4>07 · 바르다샵</h4>
+          <div class="tools"><span>콘텐츠</span><span>배너</span><span>썸네일</span></div>
+        </div>
+      </article>
+      <!-- 08 -->
+      <article class="card" data-cat="qoo10" data-title="Qoo10 JP 블랙루즈 — 썸네일·이벤트 LP" data-img="https://www.genspark.ai/api/files/s/Sa24DlE2">
+        <div class="thumb"><img src="https://www.genspark.ai/api/files/s/z9uCYesa" alt="블랙루즈" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Qoo10 JP</span>
+          <h4>08 · 블랙루즈</h4>
+          <div class="tools"><span>썸네일</span><span>랜딩페이지</span><span>기획</span></div>
+        </div>
+      </article>
+      <!-- 09 -->
+      <article class="card" data-cat="shop" data-title="아임웹 글로웍스 — 일본 JP 쇼핑몰" data-img="https://www.genspark.ai/api/files/s/mskFVXZg">
+        <div class="thumb"><img src="https://www.genspark.ai/api/files/s/4j2KvvDM" alt="글로웍스" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Shopping Mall</span>
+          <h4>09 · 글로웍스 JP</h4>
+          <div class="tools"><span>아임웹</span><span>JP 쇼핑몰</span></div>
+        </div>
+      </article>
+      <!-- 10 -->
+      <article class="card" data-cat="shop" data-title="아임웹 테라로직 — 일본 JP 쇼핑몰" data-img="https://www.genspark.ai/api/files/s/KbDbW0UJ">
+        <div class="thumb"><img src="https://www.genspark.ai/api/files/s/d3WZ7Epn" alt="테라로직" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Shopping Mall</span>
+          <h4>10 · 테라로직 JP</h4>
+          <div class="tools"><span>아임웹</span><span>JP 쇼핑몰</span></div>
+        </div>
+      </article>
+      <!-- 11 -->
+      <article class="card" data-cat="shop" data-title="카페24 락시옹 — 프랑스 화장품 쇼핑몰" data-img="https://www.genspark.ai/api/files/s/gMmL0Ab9">
+        <div class="thumb"><img src="https://www.genspark.ai/api/files/s/U17dvakZ" alt="락시옹" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Shopping Mall</span>
+          <h4>11 · 락시옹</h4>
+          <div class="tools"><span>카페24</span><span>기획</span><span>PPT</span></div>
+        </div>
+      </article>
+      <!-- 12 -->
+      <article class="card" data-cat="shop" data-title="카페24 락시옹 — 전제품 상세페이지" data-img="https://www.genspark.ai/api/files/s/uZoVp1u0">
+        <div class="thumb"><img src="https://www.genspark.ai/api/files/s/JChrHdel" alt="락시옹 상세페이지" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Shopping Mall</span>
+          <h4>12 · 락시옹 상세페이지</h4>
+          <div class="tools"><span>상세페이지</span><span>기획</span></div>
+        </div>
+      </article>
+      <!-- 13 -->
+      <article class="card" data-cat="shop" data-title="자사 브랜드 해쉬 — 브랜딩 일괄" data-img="https://www.genspark.ai/api/files/s/i5IZXrb4">
+        <div class="thumb"><img src="https://www.genspark.ai/api/files/s/f9NvBND1" alt="해쉬" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Brand</span>
+          <h4>13 · 해쉬 자사몰</h4>
+          <div class="tools"><span>리플릿</span><span>보정</span><span>리뉴얼</span></div>
+        </div>
+      </article>
+      <!-- 14 -->
+      <article class="card" data-cat="reg" data-title="블랙루즈·YG엔터 — 일본 수출 규정서" data-img="https://www.genspark.ai/api/files/s/fgDYFm4F">
+        <div class="thumb"><img src="https://www.genspark.ai/api/files/s/XFZN2yVn" alt="YG엔터 규정서" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Regulation</span>
+          <h4>14 · YG엔터 규정서</h4>
+          <div class="tools"><span>수출</span><span>일본 양식</span></div>
+        </div>
+      </article>
+      <!-- 15 -->
+      <article class="card" data-cat="reg" data-title="투크 — 일본 수출 제품 규정서" data-img="https://www.genspark.ai/api/files/s/HeRQSEl7">
+        <div class="thumb"><img src="https://www.genspark.ai/api/files/s/m2NazKKD" alt="투크 규정서" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Regulation</span>
+          <h4>15 · 투크 규정서</h4>
+          <div class="tools"><span>수출</span><span>일본 양식</span></div>
+        </div>
+      </article>
+      <!-- 16 -->
+      <article class="card" data-cat="logo" data-title="각 브랜드 로고 디자인" data-img="https://www.genspark.ai/api/files/s/dOwE7mNG">
+        <div class="thumb"><img src="https://www.genspark.ai/api/files/s/P7ioNmms" alt="로고 디자인" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Logo</span>
+          <h4>16 · 로고 디자인</h4>
+          <div class="tools"><span>브랜드 아이덴티티</span></div>
+        </div>
+      </article>
+      <!-- 17 -->
+      <article class="card" data-cat="clothes" data-title="에이블리 — 여성 의류 상세페이지·썸네일" data-img="https://www.genspark.ai/api/files/s/TzMcDqPL">
+        <div class="thumb"><img src="https://www.genspark.ai/api/files/s/K7MpnTNd" alt="에이블리" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Apparel</span>
+          <h4>17 · 에이블리</h4>
+          <div class="tools"><span>인물 보정</span><span>계절감</span><span>기획</span></div>
+        </div>
+      </article>
+      <!-- 18 -->
+      <article class="card" data-cat="clothes" data-title="메이징키즈 — 아동 의류 상세페이지·썸네일" data-img="https://www.genspark.ai/api/files/s/fGIvKV9F">
+        <div class="thumb"><img src="https://www.genspark.ai/api/files/s/oMkQ7KsD" alt="메이징키즈" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Apparel</span>
+          <h4>18 · 메이징키즈</h4>
+          <div class="tools"><span>컬러차트</span><span>기획</span></div>
+        </div>
+      </article>
+      <!-- 19 -->
+      <article class="card" data-cat="pkg" data-title="머슬케어 — 미국 한의원 스킨케어 패키지" data-img="https://www.genspark.ai/api/files/s/cfyQOiTV">
+        <div class="thumb"><img src="https://www.genspark.ai/api/files/s/iml1daGm" alt="머슬케어" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Package</span>
+          <h4>19 · 머슬케어</h4>
+          <div class="tools"><span>골드+블랙</span><span>로고+패키지</span></div>
+        </div>
+      </article>
+      <!-- 20 -->
+      <article class="card" data-cat="site" data-title="과왕가 — 농산물 콜드체인 브랜드 홈페이지" data-img="https://www.genspark.ai/api/files/s/iUmukenE">
+        <div class="thumb"><img src="https://www.genspark.ai/api/files/s/iUmukenE" alt="과왕가 홈페이지" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Homepage</span>
+          <h4>20 · 과왕가</h4>
+          <div class="tools"><span>GitHub Pages</span><span>반응형</span><span>1P 사이트</span></div>
+        </div>
+      </article>
+      <!-- 21 -->
+      <article class="card" data-cat="site" data-title="로열파크시티 II — 인천 부동산 분양 홈페이지 (한글 IDN 도메인)" data-img="https://www.genspark.ai/api/files/s/aEumnQrc">
+        <div class="thumb"><img src="https://www.genspark.ai/api/files/s/aEumnQrc" alt="로열파크시티 II" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Homepage</span>
+          <h4>21 · 로열파크시티 II</h4>
+          <div class="tools"><span>한글 IDN</span><span>분양</span><span>모션 UI</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="phil" id="phil">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="kicker">06 · Philosophy</div>
+        <h2>디자인 <em>철학</em></h2>
+      </div>
+      <p class="meta">PDF에 적힌 4가지 약속. 일할 때마다 다시 꺼내 보는 기준점입니다.</p>
+    </div>
+
+    <div class="phil-grid">
+      <div class="phil-card reveal">
+        <div class="num">01</div>
+        <h3>사용자 불편을 해결하는 디자이너</h3>
+        <p>사용자의 불편을 해결하고 브랜드의 매력을 극대화하는 성실한 디자이너가 되겠습니다.</p>
+      </div>
+      <div class="phil-card reveal" data-d="1">
+        <div class="num">02</div>
+        <h3>기본기 × 유연한 사고</h3>
+        <p>탄탄한 기본기와 유연한 사고로 브랜드의 성장을 이끌어냅니다.</p>
+      </div>
+      <div class="phil-card reveal" data-d="2">
+        <div class="num">03</div>
+        <h3>1px의 오차도 없는 꼼꼼함</h3>
+        <p>1px의 오차도 없는 꼼꼼함으로 최상의 완성도를 책임지겠습니다.</p>
+      </div>
+      <div class="phil-card reveal" data-d="3">
+        <div class="num">04</div>
+        <h3>팀의 목표를 나의 목표로</h3>
+        <p>팀의 목표를 나의 목표로 삼아 함께 시너지를 만드는 파트너가 되겠습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-inner reveal">
+      <div class="kicker" style="color:var(--accent);font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;margin-bottom:16px;">07 · Contact</div>
+      <h2 class="cta-line">함께 일하고 싶으신가요?<br><em>언제든</em> 연락 주세요.</h2>
+
+      <a href="mailto:uniqueholic_@naver.com" class="btn btn-primary">이메일 보내기 →</a>
+
+      <div class="contact-info">
+        <div class="ci">
+          <div class="k">Email</div>
+          <div class="v"><a href="mailto:uniqueholic_@naver.com">uniqueholic_@naver.com</a></div>
+        </div>
+        <div class="ci">
+          <div class="k">Phone</div>
+          <div class="v"><a href="tel:+821023401621">+82 10-2340-1621</a></div>
+        </div>
+        <div class="ci">
+          <div class="k">Blog</div>
+          <div class="v"><a href="https://blog.naver.com/uniqueholic_" target="_blank" rel="noopener">blog.naver.com/uniqueholic_</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap row">
+    <span><em>JUNG HYEIN</em> · Web Designer Portfolio 2026</span>
+    <span>Designed &amp; Coded by HyeIn</span>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" role="dialog" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="닫기">✕</button>
+  <button class="lb-prev" id="lbPrev" aria-label="이전">‹</button>
+  <button class="lb-next" id="lbNext" aria-label="다음">›</button>
+  <img class="lb-img" id="lbImg" alt="">
+  <div class="lb-info" id="lbInfo"></div>
+</div>
+
+<script>
+// ---- NAV scroll state ----
+const nav = document.getElementById('nav');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40)});
+
+// ---- Reveal on scroll ----
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:.12, rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.reveal,.skill-card,.tl-item,.card').forEach(el=>io.observe(el));
+
+// ---- Filter ----
+const filterBtns = document.querySelectorAll('#filter button');
+const cards = [...document.querySelectorAll('.card')];
+filterBtns.forEach(b=>{
+  b.addEventListener('click',()=>{
+    filterBtns.forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    const cat = b.dataset.cat;
+    cards.forEach(c=>{
+      const show = cat==='all' || c.dataset.cat===cat;
+      c.classList.toggle('hidden', !show);
+    });
+  });
+});
+
+// ---- Lightbox ----
+const lb = document.getElementById('lb');
+const lbImg = document.getElementById('lbImg');
+const lbInfo = document.getElementById('lbInfo');
+let visibleCards = [];
+let currentIdx = -1;
+
+function openLB(idx){
+  visibleCards = cards.filter(c=>!c.classList.contains('hidden'));
+  currentIdx = visibleCards.indexOf(cards[idx]);
+  if(currentIdx<0) currentIdx=0;
+  showCurrent();
+  lb.classList.add('open');
+  lb.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+function showCurrent(){
+  const c = visibleCards[currentIdx];
+  if(!c) return;
+  lbImg.src = c.dataset.img;
+  lbImg.alt = c.dataset.title;
+  lbInfo.textContent = (currentIdx+1) + ' / ' + visibleCards.length + ' · ' + c.dataset.title;
+}
+function closeLB(){
+  lb.classList.remove('open');
+  lb.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+}
+function navLB(dir){
+  if(!visibleCards.length) return;
+  currentIdx = (currentIdx + dir + visibleCards.length) % visibleCards.length;
+  showCurrent();
+}
+
+cards.forEach((c,i)=>c.addEventListener('click',()=>openLB(i)));
+document.getElementById('lbClose').addEventListener('click',closeLB);
+document.getElementById('lbPrev').addEventListener('click',()=>navLB(-1));
+document.getElementById('lbNext').addEventListener('click',()=>navLB(1));
+lb.addEventListener('click',e=>{if(e.target===lb) closeLB()});
+addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open')) return;
+  if(e.key==='Escape') closeLB();
+  if(e.key==='ArrowLeft') navLB(-1);
+  if(e.key==='ArrowRight') navLB(1);
+});
+
+// ---- Smooth anchor (already css) ----
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
