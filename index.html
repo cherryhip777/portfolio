@@ -354,17 +354,27 @@ section{padding:120px 0;position:relative}
   box-shadow:0 30px 80px rgba(0,0,0,.5);
 }
 .lb-info{
-  position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+  position:fixed;bottom:30px;z-index:2;background:rgba(11,11,15,.72);padding:8px 16px;border-radius:100px;left:50%;transform:translateX(-50%);
   text-align:center;color:var(--muted);font-size:13px;letter-spacing:.1em;
   text-transform:uppercase;
 }
 .lb-close,.lb-prev,.lb-next{
-  position:absolute;background:rgba(255,255,255,.08);border:none;
+  position:fixed;background:rgba(255,255,255,.08);border:none;
   width:48px;height:48px;border-radius:50%;color:#fff;
   font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;
   transition:.25s;font-family:inherit;
 }
 .lb-close:hover,.lb-prev:hover,.lb-next:hover{background:var(--accent)}
+.lb-dl{
+  position:fixed;top:30px;left:24px;padding:12px 20px;border-radius:100px;
+  background:rgba(255,255,255,.08);color:#fff;font-size:13px;font-weight:600;
+  text-decoration:none;letter-spacing:.02em;transition:.25s;display:none;
+}
+.lb-dl.show{display:inline-flex}
+.lb-dl:hover{background:var(--accent)}
+.lb.scroll{overflow-y:auto;align-items:flex-start;padding:84px 20px 40px}
+.lb.scroll .lb-info{top:28px;bottom:auto;max-width:calc(100vw - 200px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lb.scroll .lb-img{max-height:none;width:min(1000px,95vw);margin:0 auto}
 .lb-close{top:24px;right:24px}
 .lb-prev{left:24px;top:50%;transform:translateY(-50%)}
 .lb-next{right:24px;top:50%;transform:translateY(-50%)}
@@ -691,13 +701,13 @@ section{padding:120px 0;position:relative}
     <div class="sec-head reveal">
       <div>
         <div class="kicker">05 · Works</div>
-        <h2><em>20</em>개의 프로젝트,<br>한 번 더 클릭해 크게 보기.</h2>
+        <h2><em>23</em>개의 프로젝트,<br>한 번 더 클릭해 크게 보기.</h2>
       </div>
       <p class="meta">썸네일을 클릭하면 원본이 크게 보입니다. 카테고리별로 필터링도 가능합니다.</p>
     </div>
 
     <div class="filter reveal" id="filter">
-      <button class="active" data-cat="all">전체 · 20</button>
+      <button class="active" data-cat="all">전체 · 23</button>
       <button data-cat="cos">코스메틱</button>
       <button data-cat="qoo10">Qoo10 JP</button>
       <button data-cat="shop">쇼핑몰 구축</button>
@@ -706,6 +716,7 @@ section{padding:120px 0;position:relative}
       <button data-cat="reg">규정서</button>
       <button data-cat="logo">로고</button>
       <button data-cat="site">홈페이지</button>
+      <button data-cat="ppt">PPT 디자인</button>
     </div>
 
     <div class="work-grid" id="grid">
@@ -898,6 +909,25 @@ section{padding:120px 0;position:relative}
           <div class="tools"><span>한글 IDN</span><span>분양</span><span>모션 UI</span></div>
         </div>
       </article>
+
+      <!-- 22 (PPT 디자인 포트폴리오 · 17p 갤러리) -->
+      <article class="card" data-cat="ppt" data-title="hi design — PPT 디자인 포트폴리오 (IR·회사소개서·브랜드소개서·지출내역서)" data-img="image/hi/hi_design-01.jpg" data-pages="image/hi/hi_design-01.jpg,image/hi/hi_design-02.jpg,image/hi/hi_design-03.jpg,image/hi/hi_design-04.jpg,image/hi/hi_design-05.jpg,image/hi/hi_design-06.jpg,image/hi/hi_design-07.jpg,image/hi/hi_design-08.jpg,image/hi/hi_design-09.jpg,image/hi/hi_design-10.jpg,image/hi/hi_design-11.jpg,image/hi/hi_design-12.jpg,image/hi/hi_design-13.jpg,image/hi/hi_design-14.jpg,image/hi/hi_design-15.jpg,image/hi/hi_design-16.jpg,image/hi/hi_design-17.jpg" data-pdf="pdf/hi_design_portfolio.pdf">
+        <div class="thumb"><img src="image/po22.png" alt="hi design PPT 디자인 포트폴리오" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">PPT Design · 17p</span>
+          <h4>22 · hi design PPT</h4>
+          <div class="tools"><span>IR</span><span>회사소개서</span><span>브랜드 소개서</span><span>지출내역서</span><span>도식화</span></div>
+        </div>
+      </article>
+      <!-- 23 (크몽 서비스 상세페이지 · 11장 갤러리) -->
+      <article class="card" data-cat="ppt" data-title="크몽 — PPT 디자인 서비스 상세페이지" data-img="image/kmong/kmong_00_thumbnail.png" data-pages="image/kmong/kmong_00_thumbnail.png,image/kmong/kmong_01_hook.png,image/kmong/kmong_02_problem.png,image/kmong/kmong_03_scope.png,image/kmong/kmong_04_process.png,image/kmong/kmong_05_blank_to_done.png,image/kmong/kmong_06_before_after.png,image/kmong/kmong_07_works.png,image/kmong/kmong_08_numbers.png,image/kmong/kmong_09_package.png,image/kmong/kmong_10_faq.png" data-scroll="1">
+        <div class="thumb"><img src="image/po23.png" alt="크몽 PPT 디자인 서비스 상세페이지" loading="lazy"></div>
+        <div class="meta">
+          <span class="tag2">Service Page · 11p</span>
+          <h4>23 · 크몽 서비스 상세페이지</h4>
+          <div class="tools"><span>상세페이지</span><span>패키지·가격</span><span>정보 위계</span></div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -977,6 +1007,7 @@ section{padding:120px 0;position:relative}
   <button class="lb-close" id="lbClose" aria-label="닫기">✕</button>
   <button class="lb-prev" id="lbPrev" aria-label="이전">‹</button>
   <button class="lb-next" id="lbNext" aria-label="다음">›</button>
+  <a class="lb-dl" id="lbDl" href="#" download target="_blank" rel="noopener">PDF 다운로드 ↓</a>
   <img class="lb-img" id="lbImg" alt="">
   <div class="lb-info" id="lbInfo"></div>
 </div>
@@ -1016,12 +1047,26 @@ filterBtns.forEach(b=>{
 const lb = document.getElementById('lb');
 const lbImg = document.getElementById('lbImg');
 const lbInfo = document.getElementById('lbInfo');
-let visibleCards = [];
+const lbDl = document.getElementById('lbDl');
+let slides = [];
 let currentIdx = -1;
 
+// 카드 1개 = 슬라이드 1장, 단 data-pages가 있는 카드는 여러 장(PDF 페이지)으로 펼침
+function buildSlides(){
+  slides = [];
+  cards.forEach((c, i) => {
+    if(c.classList.contains('hidden') || c.dataset.link) return;
+    if(c.dataset.pages){
+      const pages = c.dataset.pages.split(',');
+      pages.forEach((src, k) => slides.push({card:i, src, title:c.dataset.title, page:(k+1)+'/'+pages.length, pdf:c.dataset.pdf, scroll:!!c.dataset.scroll}));
+    } else {
+      slides.push({card:i, src:c.dataset.img, title:c.dataset.title});
+    }
+  });
+}
 function openLB(idx){
-  visibleCards = cards.filter(c => !c.classList.contains('hidden') && !c.dataset.link);
-  currentIdx = visibleCards.indexOf(cards[idx]);
+  buildSlides();
+  currentIdx = slides.findIndex(sl => sl.card === idx);
   if(currentIdx < 0) currentIdx = 0;
   showCurrent();
   lb.classList.add('open');
@@ -1029,11 +1074,15 @@ function openLB(idx){
   document.body.style.overflow='hidden';
 }
 function showCurrent(){
-  const c = visibleCards[currentIdx];
-  if(!c) return;
-  lbImg.src = c.dataset.img;
-  lbImg.alt = c.dataset.title;
-  lbInfo.textContent = (currentIdx+1) + ' / ' + visibleCards.length + ' · ' + c.dataset.title;
+  const sl = slides[currentIdx];
+  if(!sl) return;
+  lb.classList.toggle('scroll', !!sl.scroll);
+  lb.scrollTop = 0;
+  lbImg.src = sl.src;
+  lbImg.alt = sl.title;
+  lbInfo.textContent = (currentIdx+1) + ' / ' + slides.length + ' · ' + sl.title + (sl.page ? ' · p.' + sl.page : '');
+  if(sl.pdf){ lbDl.href = sl.pdf; lbDl.classList.add('show'); }
+  else { lbDl.classList.remove('show'); }
 }
 function closeLB(){
   lb.classList.remove('open');
@@ -1041,8 +1090,8 @@ function closeLB(){
   document.body.style.overflow='';
 }
 function navLB(dir){
-  if(!visibleCards.length) return;
-  currentIdx = (currentIdx + dir + visibleCards.length) % visibleCards.length;
+  if(!slides.length) return;
+  currentIdx = (currentIdx + dir + slides.length) % slides.length;
   showCurrent();
 }
 
